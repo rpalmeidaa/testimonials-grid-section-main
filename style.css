@@ -1,0 +1,144 @@
+:root {
+  --mViolet: hsl(263, 55%, 52%);
+  --vdGrayish: hsl(217, 19%, 35%);
+  --vdblackish: hsl(219, 29%, 14%);
+  --w: hsl(0, 0%, 100%);
+  --lGray: hsl(0, 0%, 81%);
+  --lGrayish: hsl(210, 46%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 16px;
+  background-color: var(--lGrayish);
+  color: var(--lGrayish);
+}
+
+.cards {
+  display: grid;
+  padding: 10rem;
+  gap: 1.5rem 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "card1 card1 card2 card3"
+    "card4 card5 card5 card3";
+  justify-content: center;
+}
+img {
+  border-radius: 50%;
+  border: 1px solid;
+  width: 30px;
+  height: 30px;
+  margin-right: 1rem;
+}
+article {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+q {
+  font-size: 13px;
+  opacity: 0.5;
+  font-weight: 100;
+}
+p {
+  font-size: 12px;
+}
+
+#text-name {
+  display: flex;
+  margin-bottom: 1rem;
+}
+#text-name div {
+  align-items: center;
+}
+.card1 {
+  background: var(--mViolet);
+  border-radius: 8px;
+  grid-area: card1;
+  padding: 2rem;
+  background-image: url("./images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 20%;
+}
+
+.card2 {
+  background: var(--vdGrayish);
+  border-radius: 8px;
+  grid-area: card2;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card3 {
+  background: var(--w);
+  border-radius: 8px;
+  grid-area: card3;
+  padding: 2rem;
+  color: var(--vdblackish);
+}
+.card3 article {
+  opacity: 0.8;
+}
+.card4 {
+  background: var(--w);
+  border-radius: 8px;
+  grid-area: card4;
+  padding: 2rem;
+  color: var(--vdblackish);
+}
+.card4 article {
+  opacity: 0.8;
+}
+.card5 {
+  background: var(--vdblackish);
+  border-radius: 8px;
+  grid-area: card5;
+  padding: 2rem;
+}
+.card5 img {
+  border: 1px solid var(--mViolet);
+}
+span {
+  font-size: 11px;
+  opacity: 0.5;
+}
+@media (max-width: 1390px){
+  .cards {
+    display: grid;
+    padding: 10rem;
+    gap: 1rem 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "card1 card1 card2"
+      "card4 card5 card5"
+      "card3 card3 card3";
+    justify-content: center;
+  }
+}
+
+@media (max-width: 760px){
+  .cards {
+    display: grid;
+    padding: 10rem;
+    gap: 1rem 1.5rem;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card4"
+      "card5"
+      "card3";
+    justify-content: center;
+  }
+  .cards {
+    padding: 5rem 1.5rem;
+  }
+}
